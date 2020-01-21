@@ -13,6 +13,7 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
     "react-toastify": "^5.5.0",
+    "redux": "^4.0.5",
     "validatorjs": "^3.18.1"
   },
   "scripts": {

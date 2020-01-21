@@ -23,9 +23,9 @@ import history from './history';
 
 const reDirect = (token) => {
     const decodeToken = jwt_decode(token);
-    if (decodeToken.admin === 'true') {
+    if (decodeToken.isadmin === 'true') {
         history.push('/admin');
-    } else if (decodeToken.admin === false) {
+    } else if (decodeToken.isadmin === false) {
         history.push('/user');
     }
 };
