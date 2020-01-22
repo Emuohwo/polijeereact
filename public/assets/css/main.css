@@ -1,0 +1,53 @@
+/* Specially for news Page */
+.candidate_banner {
+    border: 2px solid rgb(152, 184, 252);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: 80%;
+    padding: 2%;
+}
+.candidate_photo {
+    width: 100%;
+    /* height: auto; */
+    height: 200px
+}
+.manifesto {
+    font-size: 70%;
+    margin: 0;
+}
+.manifestoh5{
+    background-color: grey;
+    padding-bottom: -5px;
+}
+.reduced_space {
+    margin: 0 auto;
+}
+.center_align {
+    text-align: center;
+}
+ul.campaign {
+    margin: 0;
+    padding: 0;
+}
+
+.campaign li {
+    display: inline-block;
+    width: 18%;
+    padding: 1%;
+}
+.castvote {display: block;text-align: center;}
+
+/* ================== News Media ============================= */
+@media screen and (max-width: 900px) {
+    .campaign li {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+ 
+    
+}
