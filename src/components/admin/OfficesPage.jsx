@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminHeader from '../partials/AdminHeader.jsx';
-import { getOffices, deleteOfficeAction } from '../../officeAction';
+import { getOffices, deleteOfficeAction } from '../../actions/officeAction';
 import Offices from "./Offices.jsx";
 
 /**

@@ -2,36 +2,35 @@ import React from 'react';
 import PropTypes from 'react-proptypes';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-// import { tr } from 'date-fns/locale';
 
 /**
- * Offices class declaration
+ * Parties declaration
  * 
- * @class Offices
+ * @class Parties
  * 
  * @extends {React.Component}
  */
-export class Offices extends React.Component {
+export class Parties extends React.Component {
     /**
-     * Handle office deletion
+     * Handle Party deletion
      * 
      * @method handleDelete
      * 
-     * @param {object} officeId
+     * @param {object} paartyId
      * 
      * @return {void} void
      */
     handleDelete = () => {
-        swal ({
+        swal({
             title: "Are you sure?",
-            text: "Once delete, you can not reverse it",
+            text: "Once deleted, you can not reverse it",
             icon: "warning",
             buttons: true,
-            dangerMode: true,
+            dangerMode: true
         }).then((willDelete) => {
             if (willDelete) {
-                this.props.deleteAction(this.props.offices.id);
-                swal("Office Deleted Successfully", {
+                this.props.deleteAction(this.props.parties.id);
+                swal("Party Deleted Successfully", {
                     icon: "success",
                 });
             }
@@ -39,19 +38,22 @@ export class Offices extends React.Component {
     }
 
     /**
-     * Renders Offices component
+     * Renders Parties component
      * 
-     * @returns {XML} XML/JSX
+     * @return {XML} XML/JSX
      */
     render() {
-        const { offices } = this.props;
+        const { parties } = this.props;
         return (
             <tr>
-                <td>{offices.type}</td>
-                <td>{offices.name}</td>
+                <td>{parties.logourl}</td>
+                <td>{parties.name}</td>
+                <td>{parties.hqaddress}</td>
+                {/* <td>{parties.createddate}</td>
+                <td>{parties.modifieddate}</td> */}
                 <td>
                     <button className="btn edit">
-                        <Link to={`edit-office/${offices.id}`}>
+                        <Link to={`edit-party/${parties.id}`}>
                             <i className="fa fa-pencil"></i>
                         </Link>
                     </button>
@@ -67,9 +69,9 @@ export class Offices extends React.Component {
     }
 }
 
-Offices.propTypes = {
+Parties.propTypes = {
     deleteAction: PropTypes.func.isRequired,
-    offices: PropTypes.object.isRequired
+    parties: PropTypes.object.isRequired
 };
 
-export default Offices;
+export default Parties;
