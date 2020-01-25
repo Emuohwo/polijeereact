@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'react-proptypes';
-import { Link } from 'react-router-dom';
-import swal from 'sweetalert';
+// import { Link } from 'react-router-dom';
+// import swal from 'sweetalert';
 // import { tr } from 'date-fns/locale';
 
 /**
@@ -21,22 +21,22 @@ export class Offices extends React.Component {
      * 
      * @return {void} void
      */
-    handleDelete = () => {
-        swal ({
-            title: "Are you sure?",
-            text: "Once delete, you can not reverse it",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        }).then((willDelete) => {
-            if (willDelete) {
-                this.props.deleteAction(this.props.offices.id);
-                swal("Office Deleted Successfully", {
-                    icon: "success",
-                });
-            }
-        });
-    }
+    // handleDelete = () => {
+    //     swal ({
+    //         title: "Are you sure?",
+    //         text: "Once delete, you can not reverse it",
+    //         icon: "warning",
+    //         buttons: true,
+    //         dangerMode: true,
+    //     }).then((willDelete) => {
+    //         if (willDelete) {
+    //             this.props.deleteAction(this.props.offices.id);
+    //             swal("Office Deleted Successfully", {
+    //                 icon: "success",
+    //             });
+    //         }
+    //     });
+    // }
 
     /**
      * Renders Offices component
@@ -49,7 +49,7 @@ export class Offices extends React.Component {
             <tr>
                 <td>{offices.type}</td>
                 <td>{offices.name}</td>
-                <td>
+                {/* <td>
                     <button className="btn edit">
                         <Link to={`edit-office/${offices.id}`}>
                             <i className="fa fa-pencil"></i>
@@ -61,7 +61,7 @@ export class Offices extends React.Component {
                     >
                         <i className="fa fa-trash"></i>
                     </button>
-                </td>
+                </td> */}
             </tr>
         );
     }

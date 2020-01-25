@@ -2,36 +2,35 @@ import React from 'react';
 import PropTypes from 'react-proptypes';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-// import { tr } from 'date-fns/locale';
 
 /**
- * Offices class declaration
+ * Candidates declaration
  * 
- * @class Offices
+ * @class Candidates
  * 
  * @extends {React.Component}
  */
-export class Offices extends React.Component {
+export class Candidates extends React.Component {
     /**
-     * Handle office deletion
+     * Handle Candidate deletion
      * 
      * @method handleDelete
      * 
-     * @param {object} officeId
+     * @param {object} paartyId
      * 
      * @return {void} void
      */
     handleDelete = () => {
-        swal ({
+        swal({
             title: "Are you sure?",
-            text: "Once delete, you can not reverse it",
+            text: "Once deleted, you can not reverse it",
             icon: "warning",
             buttons: true,
-            dangerMode: true,
+            dangerMode: true
         }).then((willDelete) => {
             if (willDelete) {
-                this.props.deleteAction(this.props.offices.id);
-                swal("Office Deleted Successfully", {
+                this.props.deleteAction(this.props.parties.id);
+                swal("Candidate Deleted Successfully", {
                     icon: "success",
                 });
             }
@@ -39,19 +38,22 @@ export class Offices extends React.Component {
     }
 
     /**
-     * Renders Offices component
+     * Renders Parties component
      * 
-     * @returns {XML} XML/JSX
+     * @return {XML} XML/JSX
      */
     render() {
-        const { offices } = this.props;
+        const { candidates } = this.props;
         return (
             <tr>
-                <td>{offices.type}</td>
-                <td>{offices.name}</td>
+                <td>{candidates.office}</td>
+                <td>{candidates.party}</td>
+                <td>{candidates.candidate}</td>
+                {/* <td>{candidates.createddate}</td>
+                <td>{candidates.modifieddate}</td> */}
                 <td>
                     <button className="btn edit">
-                        <Link to={`edit-office/${offices.id}`}>
+                        <Link to={`edit-candidate/${candidates.id}`}>
                             <i className="fa fa-pencil"></i>
                         </Link>
                     </button>
@@ -67,9 +69,9 @@ export class Offices extends React.Component {
     }
 }
 
-Offices.propTypes = {
+Candidates.propTypes = {
     deleteAction: PropTypes.func.isRequired,
-    offices: PropTypes.object.isRequired
+    candidates: PropTypes.object.isRequired
 };
 
-export default Offices;
+export default Candidates;

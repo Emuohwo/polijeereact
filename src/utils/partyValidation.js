@@ -1,4 +1,4 @@
-import Validatior from 'validatorjs';
+import Validator from 'validatorjs';
 
 const rules = {
     logourl: 'required',

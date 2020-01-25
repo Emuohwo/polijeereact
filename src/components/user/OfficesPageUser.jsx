@@ -7,9 +7,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AdminHeader from '../partials/AdminHeader.jsx';
+import UserHeader from '../partials/UserHeader.jsx';
 import { getOffices, deleteOfficeAction } from '../../actions/officeAction';
-import Offices from "./Offices.jsx";
+import Offices from "./OfficesUsers";
 
 /**
  * OfficesPage class declaration
@@ -167,7 +167,7 @@ export class OfficesPage extends React.Component {
                     ) 
                 ) : (
                     <div>
-                        <AdminHeader />
+                        <UserHeader />
                         <h4>No offices to display </h4>
                     </div>
                 )}
