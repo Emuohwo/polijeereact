@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 
 import AdminHeader from '../partials/AdminHeader.jsx';
 import { addCandidate } from "../../actions/candidateAction";
-import { candidateValidation } from "../../utils/candidateValidation";
+import candidateValidation from "../../utils/candidateValidation";
 
 
 /**
