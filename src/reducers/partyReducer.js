@@ -6,8 +6,8 @@ import {
     DELETE_PARTY_SUCCESSFUL, DELETE_PARTY_UNSUCCESSFUL,
     SET_LOADING_STATE
 } from '../constants/actionTypes';
-import { act } from 'react-dom/test-utils';
-import { stat } from 'fs';
+// import { act } from 'react-dom/test-utils';
+// import { stat } from 'fs';
 
 const initialState = {
     parties: {},

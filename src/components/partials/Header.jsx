@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import { decodeToken } from '../../utils/helper';
 import { logoutAction } from '../../actions/loginAction';
 
-import logo from '../../../public/assets/images/ElectionLogo.jpg';
+import logo from '../../assets/images/ElectionLogo.jpg';
+
 
 /**
  * Header class declaration
@@ -59,13 +60,11 @@ export class Header extends React.Component {
                             <span>
                             {/* <div className="topnav" id="myTopnav">  */}
                                 <Link to="/" className="active move_right_right">Home</Link>
-                                <Link to="/signin">SIGN IN</Link>
-                                <Link to="/signup">SIGN IN</Link>
-                                <a 
-                                  href="javascript:void(0);" 
-                                  style={{fontSize:'15px'}} class="icon" onclick={this.myFunction()}>
+                                <Link to="/login">Sign In</Link>
+                                <Link to="/signup">SIGN UP</Link>
+                                {/* <a href="javascript:void(0);" style={{fontSize:'15px'}} class="icon" onclick={this.myFunction()}>
                                       <i>fa fa-bars</i>
-                                  </a>
+                                  </a> */}
                             {/* </div> */}
                             </span>
                         }
@@ -83,7 +82,7 @@ Header.prototypes = {
 }
 
 export const mapStateToProps = state => ({
-    isLoggedIn: state.loginReducet.success,
+    isLoggedIn: state.loginReducer.success,
     isSignedup: state.signupReducer.success
 });
 

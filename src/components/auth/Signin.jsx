@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Loader from 'react-loader-spinner';
 import { ToastContainer} from 'react-loader-spinner';
 import 'react-toastify/dist/ReactToastify.css';
 import { loginAction } from '../../actions/loginAction';
 import loginValidation from '../../utils/loginValidation';
 import { toast } from 'react-toastify';
-import { dispatch } from 'rxjs/internal/observable/range';
+// import { dispatch } from 'rxjs/internal/observable/range';
 
 /**
  * Login class declaration
@@ -18,7 +19,7 @@ import { dispatch } from 'rxjs/internal/observable/range';
  */
 
 
-export class Signin extends Component {
+export class Signin extends React.Component {
     state = {
         loginData: {
             email: '',
@@ -67,6 +68,7 @@ export class Signin extends Component {
 
     render() {
         return (
+            <div>
             <section className="form_section">
                 <ToastContainer />
                 <div className="form_wrapper">
@@ -120,6 +122,7 @@ export class Signin extends Component {
                 </div>
                 
             </section>
+            </div>
         );
     }
 }
@@ -131,7 +134,7 @@ Signin.propTypes = {
 };
 
 
-export const mapStateToProps = state ({
+export const mapStateToProps = state => ({
     state: state.loginReducer,
     isLoading: state.loginReducer.loading
 });

@@ -10,7 +10,7 @@ export default {
         }, error => Promise.reject(error));
     },
     responseInterceptors: (store) => {
-        axios.interceptors.response.use(response, (error) => {
+        axios.interceptors.response.use( (response, error) => {
             // catch 401
             if (error.response.status === 401) {
                 store.dispatch({ type: CLEAR_STATE });

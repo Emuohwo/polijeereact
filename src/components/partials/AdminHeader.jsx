@@ -31,7 +31,7 @@ class AdminHeader extends React.Component {
                 <nav>
                     <div className="topnav" id="myTopnav">
                         <NavLink to="/admin">
-                            <img src={logo} alt="logo" className="page_logo" />
+                            {/* <img src={logo} alt="logo" className="page_logo" /> */}
                         </NavLink>
                         <NavLink activeClassName="active move_right" to="/admin">Home</NavLink>
                         <NavLink to="/adminviewparties">Parties</NavLink>
