@@ -3,7 +3,7 @@ import PropTypes from 'react-proptypes';
 import { Route, Redirect } from "react-router-dom";
 
 
-class PublicRoute = ({ component: Component, ...rest }) => (
+const PublicRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={props => (
         localStorage.getItem('token') 
           ? <Redirect to={{ pathname: '/', state: { from: props.location } }} /> 

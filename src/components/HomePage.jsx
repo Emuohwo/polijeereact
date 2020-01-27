@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import votecounts from "../../public/assets/images/votecounts.jpg";
-import electronicvoting from '../../public/assets/images/electronicvoting.jpg'
-import vote from '../../public/assets/images/vote.jpg'
+import votecounts from "../assets/images/votecounts.jpg";
+import electronicvoting from '../assets/images/electronicvoting.jpg'
+import vote from '../assets/images/vote.jpg'
 
 export class HomePage extends Component {
     render() {

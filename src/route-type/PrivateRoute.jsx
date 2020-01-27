@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'react-proptypes';
 import { Route, Redirect } from 'react-router-dom';
 

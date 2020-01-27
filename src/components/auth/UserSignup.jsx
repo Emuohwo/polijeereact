@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import signupAction from '../../actions/signupAction';
 import signupValidation from '../../utils/signupValidation';
-// import { dispatch } from 'rxjs/internal/observable/pairs';
+// import '{ dispatch } from 'rxjs/internal/observable/pairs'';
 
 /**
  * UserSignup class declaration
@@ -63,7 +63,7 @@ export class UserSignup extends Component {
             this.props.signupAction(userData).then(() => {
                 if (this.props.errorResponse) {
                     const message = this.props.errorResponse.message;
-                    const notify = () => toast.info(message0);
+                    const notify = () => toast.info(message);
                     notify();
                 }
             });
@@ -94,7 +94,7 @@ export class UserSignup extends Component {
                             : ''
                         }
                         <h1>Sign Up</h1>
-                        <form onSubmit={this.onFormSubmit}>
+                        <form onSubmit={this.onFormSubmit} className="auto_positioned signup">
                         <label htmlFor="firstname">First Name:</label>
                         <input 
                           type="text" 
@@ -113,6 +113,7 @@ export class UserSignup extends Component {
                         <input 
                           type="text" 
                           name="lastname" 
+                          className="form-control firstname" 
                           placeholder="Enter your Last Name" 
                           value={this.state.userData.lastname} 
                           onChange={this.onInputChange} 
@@ -126,6 +127,7 @@ export class UserSignup extends Component {
                         <input 
                           type="text" 
                           name="othernames" 
+                          className="form-control firstname" 
                           placeholder="Enter your Other Name" 
                           value={this.state.userData.othernames} 
                           onChange={this.onInputChange} 
@@ -139,6 +141,7 @@ export class UserSignup extends Component {
                         <input 
                           type="email" 
                           name="email" 
+                          className="form-control firstname" 
                           placeholder="Enter your Email" 
                           value={this.state.userData.email} 
                           onChange={this.onInputChange} 
@@ -152,6 +155,7 @@ export class UserSignup extends Component {
                         <input 
                           type="password" 
                           name="password" 
+                          className="form-control firstname" 
                           placeholder="Enter your Password" 
                           value={this.state.userData.password} 
                           onChange={this.onInputChange} 
@@ -165,6 +169,7 @@ export class UserSignup extends Component {
                         <input 
                           type="number" 
                           name="phonenumber" 
+                          className="form-control firstname" 
                           placeholder="example +23409012345678" 
                           value={this.state.userData.phonenumber} 
                           onChange={this.onInputChange} 
@@ -178,6 +183,7 @@ export class UserSignup extends Component {
                         <input 
                           type="text" 
                           name="passporturl" 
+                          className="form-control firstname" 
                           placeholder="Enter your Passport URL" 
                           value={this.state.userData.passporturl} 
                           onChange={this.onInputChange} 
@@ -197,14 +203,20 @@ export class UserSignup extends Component {
     }
 }
 
-UserSignup.PropTypes = {
+UserSignup.propTypes = {
     signupAction: PropTypes.func.isRequired,
     signupState: PropTypes.object.isRequired,
     errorResponse: PropTypes.object,
     isLoading: PropTypes.bool.isRequired
 };
 
-const mapStateToProps = state => 
+export const mapStateToProps = state => ({
+    sigupState: state.signupReducer,
+    errorResponse: state.signupReducer.errors,
+    isLoading: state.signupReducer.loading
+})
+
+const mapDispatchToProps = dispatch => 
 bindActionCreators({ signupAction }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserSignup);

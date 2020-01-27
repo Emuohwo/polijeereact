@@ -5,14 +5,15 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './components/App.jsx';
 import axiosInterceptor from './utils/axiosInterceptor'
-import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.css';
+import store from './store';
 // import * as serviceWorker from './serviceWorker';
 
 axiosInterceptor.requestInterceptors();
-axiosIntrceptor.responseInterceptors(store);
+axiosInterceptor.responseInterceptors(store);
 
 ReactDOM.render(
-    <Provider>
+    <Provider store={store}>
         <App />
     </Provider>, 
     document.getElementById('root')

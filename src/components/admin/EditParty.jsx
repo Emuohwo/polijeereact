@@ -95,6 +95,7 @@ class EditParty extends Component {
      * @returns {XML} XML/JSX
      */
     render() {
+        const party = this.state.party;
         return (
             <div>
                 <AdminHeader/>
@@ -127,7 +128,7 @@ class EditParty extends Component {
                           placeholder={party ? party.logourl : ''}
                           className="form-control name" 
                           value={logourl} 
-                        onChange={this.onInputChange} 
+                          onChange={this.onInputChange} 
                         /> 
                         <label htmlFor="name">Party Name:</label>
                         <input 
@@ -136,7 +137,7 @@ class EditParty extends Component {
                           placeholder={party ? party.name : ''}
                           className="form-control name" 
                           value={name} 
-                        onChange={this.onInputChange} 
+                          onChange={this.onInputChange} 
                         />
                         <label htmlFor="hqaddress">Party Address:</label>
                         <input 
@@ -145,7 +146,7 @@ class EditParty extends Component {
                           placeholder={party ? party.hqaddress : ''}
                           className="form-control name" 
                           value={hqaddress} 
-                        onChange={this.onInputChange} 
+                          onChange={this.onInputChange} 
                         />  
                         <button 
                           type="button"
